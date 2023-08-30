@@ -1,0 +1,17 @@
+no_trace: false
+debounce: 300
+ignore: \.git/
+trig: [run]
+
+rules:
+  - name: run
+    match: \.(go|env|sql)$
+    ignore: _test\.go$
+    trig_async: [bot]
+
+  - name: bot
+    command: go run cmd/bot/main.go
+
+  - name: test
+    match: _test\.go$
+    command: go test -cover {PKG}
