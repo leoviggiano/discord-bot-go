@@ -22,7 +22,7 @@ type command struct {
 	events   map[string]func(*discordgo.InteractionCreate, *payload) (entity.Payload, error)
 }
 
-func NewPing(s *discordgo.Session, services service.All, logger logrus.FieldLogger) command {
+func NewCommand(s *discordgo.Session, services service.All, logger logrus.FieldLogger) command {
 	c := command{
 		session:  s,
 		services: services,
@@ -30,9 +30,9 @@ func NewPing(s *discordgo.Session, services service.All, logger logrus.FieldLogg
 	}
 
 	c.events = map[string]func(*discordgo.InteractionCreate, *payload) (entity.Payload, error){
-		"":           c.PingInteractionCreate,
-		eventConfirm: c.PingConfirm,
-		eventCancel:  c.PingCancel,
+		"":           c.InteractionCreate,
+		eventConfirm: c.Confirm,
+		eventCancel:  c.Cancel,
 	}
 
 	return c

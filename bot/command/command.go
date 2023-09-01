@@ -21,6 +21,6 @@ type Command interface {
 
 func All(s *discordgo.Session, services service.All, log logrus.FieldLogger) []Command {
 	return []Command{
-		ping.NewPing(s, services, log),
+		ping.NewCommand(s, services, log),
 	}
 }

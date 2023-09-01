@@ -8,7 +8,7 @@ import (
 	"bot_test/lib/discord"
 )
 
-func (c command) PingConfirm(i *discordgo.InteractionCreate, payload *payload) (entity.Payload, error) {
+func (c command) Confirm(i *discordgo.InteractionCreate, payload *payload) (entity.Payload, error) {
 	embed := embeds.DefaultBot(c.session)
 	embed.Description = "ping confirm"
 

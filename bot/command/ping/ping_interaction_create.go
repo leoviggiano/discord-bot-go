@@ -8,7 +8,7 @@ import (
 	"bot_test/lib/discord"
 )
 
-func (c command) PingInteractionCreate(i *discordgo.InteractionCreate, payload *payload) (entity.Payload, error) {
+func (c command) InteractionCreate(i *discordgo.InteractionCreate, payload *payload) (entity.Payload, error) {
 	embed := embeds.DefaultBot(c.session)
 	embed.Description = "interaction create"
 
