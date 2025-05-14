@@ -1,0 +1,18 @@
+# Environment variables
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+
+# Binaries
+bin/
+dist/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db 
